@@ -2,15 +2,28 @@
 
 using namespace std;
 
-int estatuas[(int)1e5+2]
+
 
 int main(){
-	int n;
-	cin>>n;
-	for(int i=0; i<n; i++){
-		int l,r;
-		cin>>l>>r;
-		palestras.push_back({r,l});
+	int n,k;
+	cin>>n>>k;
+	int l,cont=0;
+	int estat;
+	cin>>estat;
+	l=estat;
+
+	++cont;
+	for(int i=1; i<n; i++){
+		
+		cin>> estat;
+
+		if(estat-l > 2*k){
+			l=estat;
+			++cont;
+		}	
+
 	}
-		return 0;
+
+	cout<< cont<<endl;
+	return 0;
 }
