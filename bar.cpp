@@ -2,38 +2,36 @@
 
 using namespace std;
 
+int main() {
+    long long t;
+    cin >> t;
 
+    while (t--) {
+        long long n, k;
+        cin >> n >> k;
 
-int main(){
-	
-	int t;
+        long long steps = 0;
 
-	cin>>t;
+        if (k == 1) {
+            cout << n << endl;
+            continue;
+        }
 
-	while(t--){
+        while (n > 0) {
+            if (n % k == 0) {
+                n /= k;
+                ++steps;
+            } else {
+                long long remainder = n % k;
 
-		long long n,k;
+                n -= remainder;
 
-		cin>>n>>k;
+                steps += remainder;
+            }
+        }
 
-		long long steps=0;
+        cout << steps << endl;
+    }
 
-		while(n>0){
-			if(n%k==0){
-				n/=k;
-				++steps;
-			}
-			else{
-				int remainder= n%k;
-
-				n-=remainder;
-
-				steps+=remainder;
-			}
-		}
-
-		cout<< steps<<endl;
-	}
-
-	return 0;	
+    return 0;
 }
